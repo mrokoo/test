@@ -14,7 +14,7 @@ export default {
       mesg: 1,
     }
   },
-  methods: {
+  methods: {    
     mesgdadd() {
       this.mesg++
       console.log(this.$route.path);

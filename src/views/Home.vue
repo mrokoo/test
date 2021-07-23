@@ -12,6 +12,7 @@
     </HelloWorld>
     <button @click="sendMessage2">改变信息—父组件改变</button>
     <router-view />
+    <p>123456</p>
   </div>
 </template>
 
