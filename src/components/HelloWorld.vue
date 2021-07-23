@@ -27,6 +27,9 @@
       <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
+    <h1>{{ mix }}</h1>
+    <button @click="sendMessage">改变消息</button>
+    <slot name='book' :childinfo='childinfo'></slot>
   </div>
 </template>
 
@@ -34,7 +37,19 @@
 export default {
   name: 'HelloWorld',
   props: {
-    msg: String
+    msg: String,
+    mix: String,
+    books: Array
+  },
+  data() {
+    return {
+      childinfo: '我是来自子组件的信息，现在要去父组件',
+    };
+  },
+  methods: {
+    sendMessage() {
+      this.$emit('changemessage');
+    }
   }
 }
 </script>
